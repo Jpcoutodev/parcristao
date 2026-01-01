@@ -1,0 +1,32 @@
+﻿Analyzing novo_app...                                           
+
+   info - Unused import: 'dart:math' - lib\main.dart:2:8 - unused_import
+   info - The value of the field '_isDragging' isn't used - lib\main.dart:97:8 - unused_field
+   info - Use 'const' literals as arguments to constructors of '@immutable' classes - lib\main.dart:288:23 - prefer_const_literals_to_create_immutables
+   info - Unused import: 'package:novo_app/main.dart' - test\widget_test.dart:11:8 - unused_import
+  error - The name 'MyApp' isn't a class - test\widget_test.dart:16:35 - creation_with_non_type
+
+C:\flutter\flutter_win
+dows_3.0.1-stable\flut
+ter\bin\flutter.bat : 
+5 issues found. (ran 
+in 2.0s)
+No linha:1 caractere:1
++ C:\flutter\flutter_w
+indows_3.0.1-stable\fl
+utter\bin\flutter.bat 
+analy ...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (5 issues f   
+ ound. (ran in 2.0    
+s):String) [], Re    
+moteException
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
