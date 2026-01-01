@@ -1,11 +1,11 @@
 {
-    "name": "novo_app",
-    "short_name": "novo_app",
+    "name": "Par Cristão",
+    "short_name": "Par Cristão",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#764ba2",
+    "theme_color": "#667eea",
+    "description": "Encontre seu par cristão. Namoro e amizade com propósito.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
