@@ -1330,8 +1330,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         final data = await supabase
             .from('matches')
             .select('id, user1_id, user2_id, p1:profiles!matches_user1_id_fkey(*), p2:profiles!matches_user2_id_fkey(*), messages:messages(content, created_at, sender_id, read)')
-            .or('user1_id.eq.$userId,user2_id.eq.$userId')
-            .order('created_at', descending: true, referencedTable: 'messages'); // Get latest messages
+            .or('user1_id.eq.$userId,user2_id.eq.$userId');
         
         for (var item in data) {
           final profileData = item['user1_id'] == userId ? item['p2'] : item['p1'];
@@ -1437,7 +1436,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   }
 
   // --- Aba de Chat (Mensagens) ---
-  // Placeholder - Cancel replacement to do Profile update first.
+  Widget _buildMessagesTab() {
+    return FutureBuilder<List<Profile>>(
       future: _interestFutures['mutuos'] ?? _fetchInterestProfiles('mutuos'),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
@@ -1649,7 +1649,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           const SnackBar(content: Text('Conversa limpa com sucesso')),
         );
       }
-      _refreshInterestTab('mutuos'); // Refresh to update last message preview
+      _refreshInterestTab('mutuos');
     } catch (e) {
       print('Erro ao limpar conversa: $e');
       if (mounted) {
@@ -1658,16 +1658,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         );
       }
     }
-  }  trailing: const Icon(Icons.chevron_right, color: Colors.grey),
-                    );
-                  },
-                ),
-              ),
-            ],
-          ),
-        );
-      },
-    );
   }
 
   Future<Profile?> _getMyProfile() async {
